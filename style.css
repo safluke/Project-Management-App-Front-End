@@ -1,0 +1,164 @@
+h1, h2, h3, h4, p {
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #eee;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+
+.form-signin .checkbox {
+  font-weight: 400;
+}
+
+.form-signin .form-control {
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.signin-container {
+  padding-top: 40px;
+  background-color:#93CEE6 ;
+  padding-top: 10px;
+  padding-bottom: 10vh;
+  padding-left: 0;
+  padding-right: 0;
+  color:#4D8399;
+}
+
+.hide {
+  visibility: hidden;
+  height: 0px;
+}
+
+#Action-box {
+  padding-top:10px;
+  padding-bottom: 30px;
+}
+
+#add-button,#delete-button,#update-button,#delete-entry.#update-entry{
+  width: 60%;
+  align-items: center;
+}
+
+
+#add-submit-button {
+  margin-top: 1vh;
+}
+
+#about-box {
+  margin-top: 2vh;
+}
+
+#about:hover, #logo-title:hover, #home-nav:hover, #sign-in-nav:hover,#register-nav:hover,#sign-out-nav:hover {
+  cursor: pointer;
+}
+
+.signin-1 {
+background-color: #11A3DF;
+color: #FFFFFF;
+padding:10px 0px;
+}
+
+
+.about-1,.about-3 {
+  padding: 10px 10px;
+  background-color: #F5DEB3;
+  margin-bottom: 1vh;
+}
+
+.about-2, .about-4 {
+  padding: 10px 10px;
+  background-color: #FFF8DC;
+  margin-bottom: 1vh;
+}
+
+
+.github-icon{
+  width: 100px;
+  color: #F5DEB3;
+}
+
+
+.list-inline-item{
+  color: black;
+}
+
+
+/* Sticky footer style
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 5px;
+  width: 100%;
+  height: 40px;
+  color: #d9deca;
+}
+
+
+.footer-mail, .footer-git{
+  width: 40px;
+  filter: invert(36%) sepia(92%) saturate(1006%) hue-rotate(171deg) brightness(82%) contrast(102%);
+}
+
+.footer-linkedin{
+  width: 40px;
+}
+
+.footer-mail{
+  width: 50px;
+}
+
+.footer-icons{
+
+}
+
+.footer-container{
+  display: flex;
+  justify-content: center;
+  gap:15%;
+}
