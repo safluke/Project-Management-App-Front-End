@@ -6,6 +6,8 @@ var menu = 1
 
 const getTableActions = (data) => {
 
+$("#action-table tbody tr").remove();
+
   //map current listing to action id's
   for (let i = 0; i < data.length; i++) {
     dict[i + 1] = data[i]['actionid']
@@ -56,7 +58,7 @@ const verify = async () => {
 
   //Check to see if account exists
   const checkEmail = async () => {
-    let response = await fetch(`https://codejava-app-spring.herokuapp.com/checkUser?email=${email}`, {
+    let response = await fetch(`http://localhost:8080/checkUser?email=${email}`, {
         method: 'GET',
         headers: {
           'Accept': 'application/json',
@@ -87,7 +89,7 @@ const verify = async () => {
 
   const postLogin = async () => {
     console.log("logging")
-    let response = await fetch('https://codejava-app-spring.herokuapp.com/createLogin', {
+    let response = await fetch('http://localhost:8080/createLogin', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -105,7 +107,7 @@ const verify = async () => {
   const authenticate = async () => {
     document.querySelector('#WrongPass').classList.remove("hide")
     // ensure that the email/password match and then retrieve user info
-    let response = await fetch(`https://codejava-app-spring.herokuapp.com/getUserActions?userid=${userid}`, {
+    let response = await fetch(`http://localhost:8080/getUserActions?userid=${userid}`, {
         method: 'GET',
         headers: {
           'Accept': 'application/json',
@@ -174,7 +176,7 @@ else
   document.querySelector('#UserDetailsNot').classList.add("hide")
   //Check if account created, if so then route to sign in
   const checkRegisterSaved = async () => {
-    let response = await fetch(`https://codejava-app-spring.herokuapp.com/checkUser?email=${email}`, {
+    let response = await fetch(`http://localhost:8080/checkUser?email=${email}`, {
         method: 'GET',
         //crossOrigin: null,
         headers: {
@@ -202,7 +204,7 @@ else
   }else{
     console.log("adding")
     document.querySelector("#Userindb").classList.add("hide")
-  let response = await fetch('https://codejava-app-spring.herokuapp.com/createUser', {
+  let response = await fetch('http://localhost:8080/createUser', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -265,7 +267,7 @@ const submitNewEntry = async () => {
   const content = document.getElementById("inputContent").value
   const deadline = document.getElementById("inputDeadline").value
 
-  let response = await fetch(`https://codejava-app-spring.herokuapp.com/createActionList`, {
+  let response = await fetch(`http://localhost:8080/createActionList`, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -301,7 +303,7 @@ const submitNewEntryBack = () => {
   const getUserActions = async () => {
     console.log('hey')
     // ensure that the email/password match and then retrieve user info
-    let response = await fetch(`https://codejava-app-spring.herokuapp.com/getUserActions?userid=${userid}`, {
+    let response = await fetch(`http://localhost:8080/getUserActions?userid=${userid}`, {
         method: 'GET',
         headers: {
           'Accept': 'application/json',
@@ -340,7 +342,7 @@ const deleteExistingEntry = async () => {
 
   const deleteid = dict[deleteNo]
   console.log(deleteNo, deleteid)
-  let response = await fetch(`https://codejava-app-spring.herokuapp.com/deleteaction/${deleteid}`, {
+  let response = await fetch(`http://localhost:8080/deleteaction/${deleteid}`, {
     method: 'DELETE',
     headers: {
       'Accept': 'application/json',
@@ -349,7 +351,7 @@ const deleteExistingEntry = async () => {
     }
   })
 
-  submitNewEntryBack()
+  await submitNewEntryBack()
 }
 
 const openUpdateMenu = () => {
@@ -390,7 +392,7 @@ const updateExistingEntry = async () => {
 
   console.log('test field' + fieldEntries)
 
-  let response = await fetch(`https://codejava-app-spring.herokuapp.com/updateAction?actionid=${updateid}`, {
+  let response = await fetch(`http://localhost:8080/updateAction?actionid=${updateid}`, {
     method: 'PUT',
     headers: {
       'Accept': 'application/json',
@@ -408,7 +410,7 @@ const updateExistingEntry = async () => {
     })
 
   })
-  submitNewEntryBack()
+  await submitNewEntryBack()
 
 }
 
